@@ -2,8 +2,12 @@ package com.artemisa.datastructures.linkedlist;
 
 import lombok.Getter;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 @Getter
 public class DoublyLinkedListImpl<T> implements DoublyLinkedList<T> {
+
+    private final AtomicInteger size = new AtomicInteger();
 
     private Node<T> head;
     private Node<T> tail;
@@ -20,6 +24,7 @@ public class DoublyLinkedListImpl<T> implements DoublyLinkedList<T> {
         }
 
         this.head = node;
+        this.size.incrementAndGet();
     }
 
     @Override
@@ -34,6 +39,7 @@ public class DoublyLinkedListImpl<T> implements DoublyLinkedList<T> {
         }
 
         this.tail = node;
+        this.size.incrementAndGet();
     }
 
     @Override
@@ -74,7 +80,14 @@ public class DoublyLinkedListImpl<T> implements DoublyLinkedList<T> {
             if (next != null) {
                 next.setPrevious(node.getPrevious());
             }
+
+            this.size.decrementAndGet();
         }
+    }
+
+    @Override
+    public int size() {
+        return this.size.get();
     }
 
 }

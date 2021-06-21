@@ -1,7 +1,7 @@
 package com.artemisa.datastructures.queue;
 
-import com.artemisa.datastructures.Deque.CustomDeque;
-import com.artemisa.datastructures.Deque.CustomDequeImpl;
+import com.artemisa.datastructures.deque.CustomDeque;
+import com.artemisa.datastructures.deque.CustomDequeImpl;
 
 public class CustomQueueImpl<T> implements CustomQueue<T> {
 
@@ -19,6 +19,16 @@ public class CustomQueueImpl<T> implements CustomQueue<T> {
     @Override
     public T dequeue() {
         return this.data.dequeHead();
+    }
+
+    @Override
+    public T peek() {
+        return this.data.peekHead();
+    }
+
+    @Override
+    public int size() {
+        return this.data.size();
     }
 
 }

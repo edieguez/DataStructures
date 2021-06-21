@@ -14,4 +14,6 @@ public interface DoublyLinkedList<T> {
 
     void remove(T value);
 
+    int size();
+
 }

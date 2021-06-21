@@ -6,4 +6,8 @@ public interface CustomQueue<T> {
 
     T dequeue();
 
+    T peek();
+
+    int size();
+
 }

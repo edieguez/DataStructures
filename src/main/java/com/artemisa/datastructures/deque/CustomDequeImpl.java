@@ -1,4 +1,4 @@
-package com.artemisa.datastructures.Deque;
+package com.artemisa.datastructures.deque;
 
 import com.artemisa.datastructures.linkedlist.DoublyLinkedList;
 import com.artemisa.datastructures.linkedlist.DoublyLinkedListImpl;
@@ -60,6 +60,11 @@ public class CustomDequeImpl<T> implements CustomDeque<T> {
         Node<T> tail = this.data.getTail();
 
         return tail != null ? tail.getValue() : null;
+    }
+
+    @Override
+    public int size() {
+        return this.data.size();
     }
 
 }

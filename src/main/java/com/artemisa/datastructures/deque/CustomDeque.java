@@ -1,4 +1,4 @@
-package com.artemisa.datastructures.Deque;
+package com.artemisa.datastructures.deque;
 
 public interface CustomDeque<T> {
 
@@ -13,5 +13,7 @@ public interface CustomDeque<T> {
     T peekHead();
 
     T peekTail();
+
+    int size();
 
 }

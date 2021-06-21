@@ -1,7 +1,7 @@
 package com.artemisa.datastructures;
 
-import com.artemisa.datastructures.Deque.CustomDeque;
-import com.artemisa.datastructures.Deque.CustomDequeImpl;
+import com.artemisa.datastructures.deque.CustomDeque;
+import com.artemisa.datastructures.deque.CustomDequeImpl;
 import com.artemisa.datastructures.queue.CustomQueue;
 import com.artemisa.datastructures.queue.CustomQueueImpl;
 import org.junit.jupiter.api.Assertions;
@@ -20,8 +20,10 @@ public class DataStructuresTest {
         deque.enqueueTail("2");
         deque.enqueueTail("3");
 
+        Assertions.assertEquals(6, deque.size());
         Assertions.assertEquals("C", deque.dequeHead());
         Assertions.assertEquals("3", deque.dequeTail());
+        Assertions.assertEquals(4, deque.size());
     }
 
     @Test
@@ -31,9 +33,11 @@ public class DataStructuresTest {
         queue.enqueue("B");
         queue.enqueue("C");
 
+        Assertions.assertEquals(3, queue.size());
         Assertions.assertEquals("A", queue.dequeue());
         Assertions.assertEquals("B", queue.dequeue());
         Assertions.assertEquals("C", queue.dequeue());
+        Assertions.assertEquals(0, queue.size());
     }
 
 }
