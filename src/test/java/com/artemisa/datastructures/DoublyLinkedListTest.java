@@ -1,26 +1,25 @@
 package com.artemisa.datastructures;
 
+import com.artemisa.datastructures.Deque.CustomDeque;
+import com.artemisa.datastructures.Deque.CustomDequeImpl;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class DoublyLinkedListTest {
 
     @Test
     void addNodeTest() {
-        DoublyLinkedList<String> linkedList = new DoublyLinkedListImpl<>();
-        linkedList.remove("Z");
-        linkedList.add("A");
-        linkedList.add("B");
-        linkedList.add("C");
-        linkedList.add("D");
-        linkedList.add("E");
+        CustomDeque<String> deque = new CustomDequeImpl<>();
+        deque.enqueueHead("A");
+        deque.enqueueHead("B");
+        deque.enqueueHead("C");
 
-        System.out.println(linkedList);
-        System.out.println(linkedList.find("D"));
+        deque.enqueueTail("1");
+        deque.enqueueTail("2");
+        deque.enqueueTail("3");
 
-        linkedList.remove("C");
-        linkedList.add("C");
-
-        System.out.println(linkedList);
+        Assertions.assertEquals("C", deque.dequeHead());
+        Assertions.assertEquals("3", deque.dequeTail());
     }
 
 }

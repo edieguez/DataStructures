@@ -1,12 +1,29 @@
-package com.artemisa.datastructures;
+package com.artemisa.datastructures.linkedlist;
 
+import lombok.Getter;
+
+@Getter
 public class DoublyLinkedListImpl<T> implements DoublyLinkedList<T> {
 
     private Node<T> head;
     private Node<T> tail;
 
     @Override
-    public void add(T value) {
+    public void addHead(T value) {
+        Node<T> node = new Node<>(value);
+
+        if (this.head == null) {
+            this.tail = node;
+        } else {
+            node.setNext(this.head);
+            this.head.setPrevious(node);
+        }
+
+        this.head = node;
+    }
+
+    @Override
+    public void addTail(T value) {
         Node<T> node = new Node<>(value);
 
         if (this.head == null) {

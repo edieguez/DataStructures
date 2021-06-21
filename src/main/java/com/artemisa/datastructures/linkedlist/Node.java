@@ -1,4 +1,4 @@
-package com.artemisa.datastructures;
+package com.artemisa.datastructures.linkedlist;
 
 import lombok.Getter;
 import lombok.Setter;
