@@ -56,6 +56,14 @@ public class DoublyLinkedListImpl<T> implements DoublyLinkedList<T> {
         Node<T> node = this.find(value);
 
         if (node != null) {
+            if (this.head == node) {
+                this.head = node.getNext();
+            }
+
+            if (this.tail == node) {
+                this.tail = node.getPrevious();
+            }
+
             Node<T> previous = node.getPrevious();
             Node<T> next = node.getNext();
 
