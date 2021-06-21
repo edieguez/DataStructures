@@ -4,6 +4,8 @@ import com.artemisa.datastructures.deque.CustomDeque;
 import com.artemisa.datastructures.deque.CustomDequeImpl;
 import com.artemisa.datastructures.queue.CustomQueue;
 import com.artemisa.datastructures.queue.CustomQueueImpl;
+import com.artemisa.datastructures.stack.CustomStack;
+import com.artemisa.datastructures.stack.CustomStackImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -38,6 +40,19 @@ public class DataStructuresTest {
         Assertions.assertEquals("B", queue.dequeue());
         Assertions.assertEquals("C", queue.dequeue());
         Assertions.assertEquals(0, queue.size());
+    }
+
+    @Test
+    void pushPopTest() {
+        CustomStack<String> stack = new CustomStackImpl<>();
+        stack.push("A");
+        stack.push("B");
+        stack.push("C");
+
+        Assertions.assertEquals("C", stack.pop());
+        Assertions.assertEquals("B", stack.peek());
+        Assertions.assertEquals("B", stack.pop());
+        Assertions.assertEquals("A", stack.pop());
     }
 
 }
